@@ -11,7 +11,7 @@ public class Minesweeper {
 	public Minesweeper(int rows, int colums){
 		this.row = rows;
 		this.column = colums;
-		board = new int [row][column]
+		board = new int [row][column];
 	}
 	public static void main(String[] args){
 		System.out.println("New Game");

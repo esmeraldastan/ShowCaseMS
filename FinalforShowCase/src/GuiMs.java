@@ -11,8 +11,14 @@ public class GuiMs {
 	//10x10
 	JButton[][] button = new JButton[10][10];
 	int[][] numbs = new int[10][10];
-	//public static void main(String[] args){
-	//System.out.println("Hello");
-
+	
+	public GuiMs(){
+		frame.setSize(500,500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+	public static void main(String[] args){
+	new GuiMs();
+	}
 }
 
