@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
@@ -41,6 +42,7 @@ public class GuiMs implements ActionListener{
 		frame.add(grid, BorderLayout.CENTER);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+		addBombs();
 		}
 	public static void main(String[] args){
 	new GuiMs();
@@ -56,30 +58,58 @@ public class GuiMs implements ActionListener{
 		numbs = new int[10][10];
 		for(int i = 0; i < 10; i++){
 			int random = (int)(Math.random()* list.size());
-			numbs[list.get(random)/100][list.get(numbs) % 100] = mine;
+			numbs[list.get(random)/100][list.get(random) % 100] = mine;
 			list.remove(numbs);
 		}
 		//check surroundings
 		for( int x = 0; x< numbs.length; x++){
 			for (int y = 0; y< numbs[0].length; y++){
+			if (numbs[x][y] != mine){
 			int surrounding = 0;
-			forx>0 && y>0 && numbs[x-1][y-1]== mine){
-				
+			if(x > 0 && y > 0 && numbs[x-1][y-1]== mine) {// up left 
+				surrounding++;
+			}
+			if ( y > 0 && numbs[x][y-1] == mine){ // up
+				surrounding++;
+			}
+			if ( x < numbs.length - 1 && y < numbs[0].length - 1 && numbs[x+1][y+1] == mine){
+				surrounding++;
+			}
+			numbs[x][y] = surrounding;
+				}	
 			}
 		}
 	}
 	
-	public void actionPreformed(ActionEvent arg0){
+	public void actionPreformed(ActionEvent event){
+		if(event.getSource().equals(reset)) {
+			//reset the board
+			
+		}
+		else {
+			for(int x = 0; x < button.length; x++){
+				for(int y= 0; y < button[0].length; y++){
+					if(event.getSource().equals(button[x][y])){
+						button[x][y].setText(numbs[x][y] + "");
+					}
+				}
+			}
+		}
 		
 		
 		
 		
-		\\
-		\
+		
+
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 		
 		
 	}
-}
+
 
