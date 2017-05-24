@@ -41,6 +41,7 @@ public class GuiMs implements ActionListener{
 		}
 		frame.add(grid, BorderLayout.CENTER);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		addBombs();
 		frame.setVisible(true);
 		addBombs();
 		}
@@ -66,13 +67,13 @@ public class GuiMs implements ActionListener{
 			for (int y = 0; y< numbs[0].length; y++){
 			if (numbs[x][y] != mine){
 			int surrounding = 0;
-			if(x > 0 && y > 0 && numbs[x-1][y-1]== mine) {// up left 
+			if (y +1 < y && numbs [x][y + 1] != -1){
+				surrounding++;
+				}
+			if ( y - 1 >= y && numbs [x][y - 1 ] != -1){
 				surrounding++;
 			}
-			if ( y > 0 && numbs[x][y-1] == mine){ // up
-				surrounding++;
-			}
-			if ( x < numbs.length - 1 && y < numbs[0].length - 1 && numbs[x+1][y+1] == mine){
+			if( x -1 >= 0  && numbs [ x -1 ][y] != -1) {
 				surrounding++;
 			}
 			numbs[x][y] = surrounding;
@@ -80,8 +81,15 @@ public class GuiMs implements ActionListener{
 			}
 		}
 	}
+	public void reset(){
+		for( int x = 0; x< numbs.length; x++){
+			for (int y = 0; y< numbs[0].length; y++){
+				
+			}
+		}
+	}
 	
-	public void actionPreformed(ActionEvent event){
+	public void actionPerformed(ActionEvent event){
 		if(event.getSource().equals(reset)) {
 			//reset the board
 			
@@ -102,11 +110,11 @@ public class GuiMs implements ActionListener{
 		
 
 	}
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public void actionPerformed(ActionEvent arg0) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 	
 		
 		
