@@ -1,4 +1,5 @@
-import javax.swing.JFrame;
+
+
 
 //new code
 //Mr. Wiebe's Base Code
@@ -28,7 +29,10 @@ public class GuiMs{
 	this.printBoard();
 	
 	frame.pack();
-				
+
+	frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	
 	}
 }
 
