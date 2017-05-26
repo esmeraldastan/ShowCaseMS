@@ -62,7 +62,7 @@ public class GuiMs{
             }
         }
     }
-
+// the numbers added 123
     public void addNums(){
         for (int r = 0; r < rows; r++){
             for (int c = 0; c < columns; c++){
@@ -173,6 +173,9 @@ public class GuiMs{
             }
         }
     }
+    
+    //pre set of the game
+    
     public static void main(String[] args){
     	Scanner scanner = new Scanner(System.in);
 		System.out.print("Rows? ");
