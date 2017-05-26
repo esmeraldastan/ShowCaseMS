@@ -18,14 +18,17 @@ public class Cell implements ActionListener {
     public Cell(GuiMs board){
     	
         button = new JButton();
+        //reset
+        //JFrame reset = new JFrame("Reset?");
         button.addActionListener(this);
         button.setPreferredSize(new Dimension(20,20));
         button.setMargin(new Insets(0,0,0,0));
         //reset button
-        JButton reset = new JButton("Want to reset??");
+        //JButton reset = new JButton("Want to reset??");
         value = 0;
         this.board = board;
         notChecked = true;
+        
     }
     /** This Method tells me if the cell is a bomb.
      * 
