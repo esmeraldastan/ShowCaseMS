@@ -3,8 +3,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-//import javax.swing.JButton;
-//import javax.swing.JFrame;
 
 
 
@@ -19,20 +17,17 @@ public class GuiMs{
     public GuiMs(){
         this(10, 110, 150);
         
-     //JButton reset = new JButton("Reset?)");
+     
     }
 
     public GuiMs(int rows, int columns, int bombs){
-        //Put the constructor here.
+        //constructor 
         this.rows = rows;
         this.columns = columns;
 
         board = new Cell[rows][columns];
        
-       
-
-        //These pieces are for the GUI.
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("-Minesweeper Game-");
         frame.add(addCells());
        // frame.setSize(700,700);
         
@@ -186,7 +181,7 @@ public class GuiMs{
 		System.out.print("Columns? ");
 		int columns = scanner2.nextInt();
 	    Scanner scanner3 = new Scanner(System.in);
-		System.out.print("? ");
+		System.out.print("Bombs? ");
 		int bombs = scanner3.nextInt();
 	    
     	GuiMs game = new GuiMs(rows, columns, bombs);
