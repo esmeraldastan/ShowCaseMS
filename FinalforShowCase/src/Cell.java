@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Cell implements ActionListener {
+	
 	 //Variables you need to work with
     int value;
     private boolean notChecked;
@@ -15,6 +16,7 @@ public class Cell implements ActionListener {
      * This constructor is complete and does not need modification
      */
     public Cell(GuiMs board){
+    	
         button = new JButton();
         button.addActionListener(this);
         button.setPreferredSize(new Dimension(20,20));
@@ -68,7 +70,7 @@ public class Cell implements ActionListener {
     public void displayValue(){
         if(this.isBomb()){
             button.setText("\u2600");
-            button.setBackground(Color.RED);
+            button.setBackground(Color.GREEN);
         }else if(value!=0){
             button.setText(String.valueOf(value));
         }

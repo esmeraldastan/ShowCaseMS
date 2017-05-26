@@ -3,6 +3,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
 
 
 
@@ -10,11 +12,14 @@ import java.util.Scanner;
 //Mr. Wiebe's Base Code
 
 public class GuiMs{
+	//JFrame frame = new JFrame("Welcome to Minesweeper");
     Cell[][] board;
     int rows;
     int columns;
     public GuiMs(){
         this(10, 110, 150);
+        
+     //JButton reset = new JButton("Reset?)");
     }
 
     public GuiMs(int rows, int columns, int bombs){
@@ -24,10 +29,17 @@ public class GuiMs{
 
         board = new Cell[rows][columns];
        
+       
 
         //These pieces are for the GUI.
         JFrame frame = new JFrame();
         frame.add(addCells());
+       // frame.setSize(700,700);
+        
+        //reset button10
+        
+        
+        //frame.add(rest,BoarderLayout.South);
 
          try{
             this.addBombs(bombs);
@@ -134,7 +146,7 @@ public class GuiMs{
      */
     public void printBoard(){
         System.out.println();
-        System.out.println("<<<<<<<<<<WELCOME TO MINESWEEPER>>>>>>>>>>");
+        System.out.println("************WELCOME TO MINESWEEPER**************");
         System.out.println();
         for(int row = 0; row < rows; row++){
             for(int col = 0; col < columns; col++) {
@@ -168,13 +180,13 @@ public class GuiMs{
     }
     public static void main(String[] args){
     	Scanner scanner = new Scanner(System.in);
-		System.out.print("How many rows do you want? ");
+		System.out.print("Rows? ");
 	    int rows = scanner.nextInt();
 	    Scanner scanner2 = new Scanner(System.in);
-		System.out.print("How many columns do you want? ");
+		System.out.print("Columns? ");
 		int columns = scanner2.nextInt();
 	    Scanner scanner3 = new Scanner(System.in);
-		System.out.print("How many bombs do you want? ");
+		System.out.print("? ");
 		int bombs = scanner3.nextInt();
 	    
     	GuiMs game = new GuiMs(rows, columns, bombs);
